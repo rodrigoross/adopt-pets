@@ -1,27 +1,30 @@
 <template>
   <div>
-    <h1>Dogs for Adoption</h1>
-    <b-table stripd hover :items="dogs">
-      <!-- /Dinamic template that stores href -->
-      <template slot="name" slot-scope="data">
-        <router-link :to="`/pets/dogs/${data.index}`">{{ data.value }}</router-link>
-      </template>
-    </b-table>
+    <PetTable 
+      species="dogs"
+      :pets="dogs"
+    />
   </div>
 </template>
 
 <script>
 /* eslint-disable */
 import { mapState } from "vuex";
+import PetTable from '@/components/PetTable.vue'
 
 export default {
+  components: {
+    PetTable,
+  },
   data() {
     return {
       //   dogs
-    };
+    }
   },
   computed: {
-    ...mapState(["dogs"])
+    ...mapState([
+      'dogs'
+    ])
   }
 };
 </script>
