@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="home-view-container">
     <h1>Adopt a new best friend!</h1>
     <h3>{{ animalsCount}} pets waiting to be adopted</h3>
     {{ getAllCats.length }}
@@ -33,14 +33,14 @@
 
 <script>
 /* eslint-disable */
-import { mapActions, mapGetters } from "vuex";
+import { mapActions, mapGetters } from 'vuex';
 export default {
-  name: "home",
+  name: 'home',
   data() {
     return {
       showPetForm: false,
       formData: {
-        name: "",
+        name: '',
         age: 0,
         species: null
       }
@@ -48,12 +48,12 @@ export default {
   },
   computed: {
     ...mapGetters([
-      "animalsCount",
-      "getAllCats"
+      'animalsCount',
+      'getAllCats'
     ])
   },
   methods: {
-    ...mapActions(["addPet"]),
+    ...mapActions(['addPet']),
     togglePetForm() {
       this.showPetForm = !this.showPetForm;
     },
@@ -72,7 +72,7 @@ export default {
 
       //Reset Form after submit
       this.formData = {
-        name: "",
+        name: '',
         age: 0,
         species: null
       };
