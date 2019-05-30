@@ -1,3 +1,4 @@
+/* eslint-disable */
 /**
  * Array of dogs to load on the app
  */
